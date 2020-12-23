@@ -1,0 +1,16 @@
+{
+                    "app": "Crmeb",
+                    "timestamp":"2020-10-19 10:51:51.762",
+                    "level": "WARN",
+                    "thread": "restartedMain",
+                    "class": "o.m.spring.mapper.ClassPathMapperScanner",
+                    "message": "No MyBatis mapper was found in '[com.example.hxsp]' package. Please check your configuration." }
+                    
+{
+                    "app": "Crmeb",
+                    "timestamp":"2020-10-19 10:51:52.242",
+                    "level": "WARN",
+                    "thread": "restartedMain",
+                    "class": "o.m.spring.mapper.ClassPathMapperScanner",
+                    "message": "No MyBatis mapper was found in '[com.example.hxsp]' package. Please check your configuration." }
+                    

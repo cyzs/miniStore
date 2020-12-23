@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.hxsp.dao.CouponInfoDao">
+    <resultMap id="result" type="com.example.hxsp.bean.CouponInfo">
+        <id column="id" property="id"/>
+        <result column="name" property="name"/>
+        <result column="money" property="money"/>
+        <result column="is_limited" property="isLimited"/>
+        <result column="total" property="total"/>
+        <result column="last_total" property="lastTotal"/>
+        <result column="use_type" property="useType"/>
+        <result column="primary_key" property="primaryKey"/>
+        <result column="min_price" property="minPrice"/>
+        <result column="receive_start_time" property="receiveStartTime"/>
+        <result column="receive_end_time" property="receiveEndTime"/>
+        <result column="is_fixed_time" property="isFixedTime"/>
+        <result column="use_start_time" property="useStartTime"/>
+        <result column="use_end_time" property="useEndTime"/>
+        <result column="day" property="day"/>
+        <result column="type" property="type"/>
+        <result column="sort" property="sort"/>
+        <result column="status" property="status"/>
+        <result column="is_del" property="isDel"/>
+        <result column="create_time" property="createTime"/>
+        <result column="update_time" property="updateTime"/>
+    </resultMap>
+
+	<!--    查询所有-->
+    <select id="findAllCoupon" resultType="com.example.hxsp.bean.CouponInfo" resultMap="result">
+        select * from coupon_info 
+         <where>
+        1=1
+            <if test="status!=null "> and status=#{status}</if>
+
+        </where>
+    </select>
+    
+    	<!--    查询指定-->
+    <select id="findOne" resultType="com.example.hxsp.bean.CouponInfo" resultMap="result">
+        select * from coupon_info where id=#{id}
+    </select>
+    
+    	<!--    查询指定-->
+    <select id="findReceivedEndTimeExpired" resultType="com.example.hxsp.bean.CouponInfo" resultMap="result">
+        select * from coupon_info where status=#{status}
+        
+        
+          <if test="receiveEndTime != null ">
+            <![CDATA[ and receive_end_time < to_date(#{receiveEndTime,jdbcType=DATE},'yyyy-MM-dd')]]>
+        </if>
+        
+        
+        
+    </select>
+    
+    	<!--    查询指定-->
+    <select id="findUseEndTimeExpired" resultType="com.example.hxsp.bean.CouponInfo" resultMap="result">
+        select * from coupon_info where status=#{status}
+        
+        
+          <if test="receiveEndTime != null ">
+            <![CDATA[ and use_end_time < to_date(#{useEndTime,jdbcType=DATE},'yyyy-MM-dd')]]>
+        </if>
+        
+    </select>
+    
+    	<!--    查询指定-->
+    <select id="findUseStartTimeExpired" resultType="com.example.hxsp.bean.CouponInfo" resultMap="result">
+       select * from coupon_info where 1=1
+        
+        
+          <if test="receiveEndTime != null ">
+            <![CDATA[ and use_start_time = to_date(#{useStartTime,jdbcType=DATE},'yyyy-MM-dd')]]>
+        </if>
+    </select>
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    <!-- 修改优惠券 -->
+    <update id="updateOne" parameterType="com.example.hxsp.bean.CouponInfo">
+        update coupon_info set 
+        name=#{name}, money=#{money}, is_limited=#{isLimited}, total=#{total}, use_type=#{useType}, 
+        primary_key=#{primaryKey}, min_price=#{minPrice}, receive_start_time=#{receiveStartTime}, 
+        receive_end_time=#{receiveEndTime},use_start_time=#{useStartTime}, use_end_time=#{useEndTime}, 
+        type=#{type} where id=#{id}
+    </update>
+    
+    
+      <!-- 修改优惠券 -->
+    <update id="updateLastTotal" parameterType="com.example.hxsp.bean.CouponInfo">
+        update coupon_info set 
+        last_total=#{lastTotal} where id=#{id}
+    </update>
+    
+      <update id="updateStatus" parameterType="com.example.hxsp.bean.CouponInfo">
+        update coupon_info set 
+        status=#{status} where id=#{id}
+    </update>
+    
+    
+    
+         <!-- 修改优惠券 -->
+    <update id="del" parameterType="com.example.hxsp.bean.CouponInfo">
+        delete from coupon_info where  
+        id=#{id}
+    </update>
+    
+	<!--  新增一个优惠券-->
+	<insert id="insertOne" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO coupon_info( name, money, is_limited, total, use_type, primary_key, min_price, receive_start_time, 
+        receive_end_time, use_start_time, use_end_time, type)
+		VALUES(#{name}, #{money}, #{isLimited}, #{total}, #{useType}, #{primaryKey},  #{minPrice}, #{receiveStartTime}, 
+		#{receiveEndTime},#{useStartTime},
+		 #{useEndTime}, #{type})
+    </insert>
+
+ 
+</mapper>

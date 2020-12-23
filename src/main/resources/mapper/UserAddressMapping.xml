@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.hxsp.dao.UserAddressDao">
+    <resultMap id="result" type="com.example.hxsp.bean.UserAddress">
+        <id column="id" property="id"/>
+        <result column="uid" property="uid"/>
+        <result column="real_name" property="realName"/>
+        <result column="phone" property="phone"/>
+        <result column="province" property="province"/>
+        <result column="city" property="city"/>
+        <result column="district" property="district"/>
+        <result column="city_id" property="cityId"/>
+        <result column="detail" property="detail"/>
+        <result column="post_code" property="postCode"/>
+        <result column="longitude" property="longitude"/>
+        <result column="latitude" property="latitude"/>
+        <result column="is_default" property="isDefault"/>
+        <result column="is_del" property="isDel"/>
+        <result column="create_time" property="createTime"/>
+        <result column="update_time" property="updateTime"/>
+                <result column="address" property="address"/>
+    </resultMap>
+
+<!--    查询所有-->
+    <select id="findAllByUid" resultType="com.example.hxsp.bean.UserAddress" resultMap="result">
+        select * from user_address 
+        
+         <where>
+            1=1
+            and  uid=#{uid}
+            <if test="id!=null"> and id=#{id}</if>
+        </where>
+    </select>
+    <!-- 更改为非默认 -->
+    <update id="updateAllToNonDefault" parameterType="com.example.hxsp.bean.UserAddress">
+        update user_address set is_default=0 where uid=#{uid}
+    </update>
+    <!-- 更改 -->
+    <update id="updateOne" parameterType="com.example.hxsp.bean.UserAddress">
+        update user_address set real_name=#{realName}, phone=#{phone}, province=#{province}, city=#{city}, district=#{district}, city_id=#{cityId}, 
+		detail=#{detail}, post_code=#{postCode}, longitude=#{longitude}, latitude=#{latitude}, is_default=#{isDefault}, address=#{address}
+         where id=#{id}
+    </update>
+    
+    <!-- 新增 -->
+    <insert id="insertOne" parameterType="com.example.hxsp.bean.UserAddress" useGeneratedKeys="true" keyProperty="id">
+    	insert into user_address (uid, real_name, phone, province, city, district, city_id, 
+    	detail, post_code, longitude, latitude, is_default, address)values(#{uid},#{realName},#{phone},#{province},#{city}, #{district},#{cityId},
+    	#{detail},#{postCode}, #{longitude},  #{latitude}, #{isDefault}, #{address})
+    	
+</insert>
+
+	<!-- 删除 -->
+	<update id="delOne" parameterType="com.example.hxsp.bean.UserAddress">
+        delete from  user_address where id=#{id}
+    </update>
+ 
+</mapper>

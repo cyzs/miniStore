@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.hxsp.dao.TemplateMessageDao">
+    <resultMap id="result" type="com.example.hxsp.bean.TemplateMessage">
+        <id column="id" property="id"/>
+        <result column="type" property="type"/>
+        <result column="temp_key" property="tempKey"/>
+        <result column="title" property="title"/>
+        <result column="content" property="content"/>
+        <result column="extra" property="extra"/>
+        <result column="status" property="status"/>
+        <result column="create_time" property="createTime"/>
+        <result column="update_time" property="updateTime"/>
+    </resultMap>
+
+<!--    查询所有-->
+    <select id="selAll" resultType="com.example.hxsp.bean.TemplateMessage" resultMap="result">
+        select * from template_message
+    </select>
+
+ 
+</mapper>

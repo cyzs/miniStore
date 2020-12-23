@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.hxsp.dao.ProductInfoDao">
+
+    <resultMap id="result" type="com.example.hxsp.bean.ProductInfo">
+        <id column="id" property="id"/>
+        <result column="image" property="image"/>
+        <result column="slider_image" property="sliderImage"/>
+        <result column="product_name" property="productName"/>
+        <result column="product_info" property="productInfo"/>
+        <result column="keyword" property="keyword"/>
+        <result column="cate_id" property="cateId"/>
+        <result column="price" property="price"/>
+        <result column="vip_price" property="vipPrice"/>
+        <result column="ot_price" property="otPrice"/>
+        <result column="product_type" property="productType"/>
+        <result column="unit_name" property="unitName"/>
+        <result column="sort" property="sort"/>
+        <result column="sales" property="sales"/>
+        <result column="stock" property="stock"/>
+        <result column="is_show" property="isShow"/>
+        <result column="is_hot" property="isHot"/>
+        <result column="is_benefit" property="isBenefit"/>
+        <result column="is_best" property="isBest"/>
+        <result column="is_new" property="isNew"/>
+        <result column="add_time" property="addTime"/>
+        <result column="is_postage" property="isPostage"/>
+        <result column="is_del" property="isDel"/>
+        <result column="give_integral" property="giveIntegral"/>
+        <result column="cost" property="cost"/>
+        <result column="is_seckill" property="isSeckill"/>
+        <result column="is_bargain" property="isBargain"/>
+        <result column="is_good" property="isGood"/>
+        <result column="fake_sales" property="fakeSales"/>
+        <result column="browse" property="browse"/>
+        <result column="code_path" property="codePath"/>
+        <result column="bar_code" property="barCode"/>
+        <result column="source_link" property="sourceLink"/>
+        <result column="video_link" property="videoLink"/>
+        <result column="temp_id" property="tempId"/>
+        <result column="spec_type" property="specType"/>
+        <result column="activity" property="activity"/>
+        <result column="create_time" property="createTime"/>
+        <result column="update_time" property="updateTime"/>
+    </resultMap>
+
+	<!--    查询所有普通类商品-->
+    <select id="selAll" resultType="com.example.hxsp.bean.ProductInfo" resultMap="result">
+        select * from product_info where product_type=0 
+    </select>
+    	<!--    查询所有普通类商品-->
+    <select id="selAlla" resultType="com.example.hxsp.bean.ProductInfo" resultMap="result">
+        select * from product_info where product_type=0
+         <if test="cateId != null">
+            and cate_id=#{cateId} 
+        </if>
+        
+        <if test="isShow != null">
+            and is_show=#{isShow} 
+        </if>
+        <if test="productName != null and productName != ''">
+             and product_name like #{productName}
+        </if>
+      
+    </select>
+    
+    <!--    查询所有普通类商品-->
+    <select id="selAllIntegralProducts" resultType="com.example.hxsp.bean.ProductInfo" resultMap="result">
+        select * from product_info where product_type=1
+    </select>
+
+	<!--    查询所有上架的热门类商品-->
+    <select id="selAllHotProductsOnSale" resultType="com.example.hxsp.bean.ProductInfo" resultMap="result">
+        select * from product_info where is_show=1 and is_hot=1 and is_del=0 and product_type=0
+    </select>
+    <!--    查询所有上架的积分类商品-->
+    <select id="selAllIntProductsOnSale" resultType="com.example.hxsp.bean.ProductInfo" resultMap="result">
+        select * from product_info where is_show=1 and is_del=0 and product_type=1
+    </select>
+      <!--    查询所有上架的积分类商品-->
+    <select id="selProById" resultType="com.example.hxsp.bean.ProductInfo" resultMap="result">
+        select * from product_info where is_show=1 and is_del=0 and id=#{id}
+    </select>
+    <!-- 查询分类商品 -->
+        <select id="selProByCateId" resultType="com.example.hxsp.bean.ProductInfo" resultMap="result">
+        select * from product_info where is_show=1 and is_del=0 and cate_id=#{cateId}
+    </select>
+    
+    <!-- 上架 -->
+    <update id="setProOnSale" parameterType="com.example.hxsp.bean.ProductInfo">
+        update product_info set is_show=1 where id=#{id}
+    </update>
+      <!-- 下架 -->
+    <update id="setProOffSale" parameterType="com.example.hxsp.bean.ProductInfo">
+        update product_info set is_show=0 where id=#{id}
+    </update>
+    
+     <update id="delete" parameterType="com.example.hxsp.bean.ProductInfo">
+        delete from product_info where id=#{id}
+    </update>
+    
+    <!-- 修改商品 -->
+    <update id="updateOne" parameterType="com.example.hxsp.bean.ProductInfo">
+        update product_info set 
+        slider_image=#{images}, product_name=#{name}, product_info=#{info}, keyword=#{keyword}, cate_id=#{cateId}, 
+        price=#{price}, ot_price=#{otPrice}, product_type=#{type}, unit_name=#{unit}, stock=#{stock}, is_show=#{isShow},
+        is_hot=#{isHot}, is_postage=#{isPostage}, give_integral=#{giveIntegral}, cost=#{cost}, video_link=#{videoLink}, 
+        temp_id=#{tempId} where id=#{id}
+    </update>
+    
+	<!--  新增一个商品-->
+	<insert id="insertOne" parameterType="com.example.hxsp.bean.ProductInfo" useGeneratedKeys="true" keyColumn="id" keyProperty="id">
+        INSERT INTO product_info(image, slider_image, product_name, product_info, keyword, cate_id, price, ot_price, 
+        product_type, unit_name, stock, is_show, is_hot, is_postage, give_integral, cost, video_link, temp_id)
+		VALUES(#{image}, #{sliderImage}, #{productName}, #{productInfo}, #{keyword}, #{cateId}, #{price},  #{otPrice}, #{productType}, #{unitName}, 
+		#{stock}, #{isShow}, #{isHot}, #{isPostage}, #{giveIntegral}, #{cost}, #{videoLink}, #{tempId})
+    </insert>
+
+<!--    查询全部已上架商品-->
+    <select id="selAllProduct" resultMap="result">
+        select * from product_info where is_show=1 and is_del=0 and product_type=0
+    </select>
+</mapper>

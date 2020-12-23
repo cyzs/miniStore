@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.hxsp.dao.OrderProductDao">
+
+
+    <resultMap id="result" type="com.example.hxsp.bean.OrderProduct">
+        <id column="id" property="id"/>
+        <result column="order_id" property="orderId"/>
+        <result column="product_id" property="productId"/>
+        <result column="product_name" property="productName"/>
+        <result column="image" property="image"/>
+        <result column="price" property="price"/>
+        <result column="cart_num" property="cartNum"/>
+    </resultMap>
+
+<!--    查看订单商品列表-->
+    <select id="list" parameterType="Integer" resultMap="result">
+        select * from order_product where order_id=#{orderId}
+    </select>
+
+<!--    添加订单商品关联-->
+    <insert id="add" parameterType="com.example.hxsp.bean.OrderProduct">
+        insert into order_product(order_id,product_id,product_name,image,price,cart_num)
+        values (#{orderId},#{productId},#{productName},#{image},#{price},#{cartNum})
+    </insert>
+
+</mapper>

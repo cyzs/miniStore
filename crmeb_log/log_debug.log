@@ -1,0 +1,248 @@
+{
+                    "app": "Crmeb",
+                    "timestamp":"2020-10-19 10:51:50.329",
+                    "level": "DEBUG",
+                    "thread": "restartedMain",
+                    "class": "o.s.b.c.l.ClasspathLoggingApplicationListener",
+                    "message": "Application started with classpath: [file:/C:/Users/Administrator/Desktop/hxsp/target/classes/]" }
+                    
+{
+                    "app": "Crmeb",
+                    "timestamp":"2020-10-19 10:51:50.513",
+                    "level": "DEBUG",
+                    "thread": "restartedMain",
+                    "class": "o.springframework.boot.SpringApplication",
+                    "message": "Loading source class com.example.hxsp.HxspApplication" }
+                    
+{
+                    "app": "Crmeb",
+                    "timestamp":"2020-10-19 10:51:50.592",
+                    "level": "DEBUG",
+                    "thread": "restartedMain",
+                    "class": "o.s.b.c.c.ConfigFileApplicationListener",
+                    "message": "Loaded config file 'file:/C:/Users/Administrator/Desktop/hxsp/target/classes/application.yml' (classpath:/application.yml)" }
+                    
+{
+                    "app": "Crmeb",
+                    "timestamp":"2020-10-19 10:51:50.593",
+                    "level": "DEBUG",
+                    "thread": "restartedMain",
+                    "class": "o.s.boot.devtools.restart.ChangeableUrls",
+                    "message": "Matching URLs for reloading : [file:/C:/Users/Administrator/Desktop/hxsp/target/classes/]" }
+                    
+{
+                    "app": "Crmeb",
+                    "timestamp":"2020-10-19 10:51:50.593",
+                    "level": "DEBUG",
+                    "thread": "restartedMain",
+                    "class": "o.s.b.devtools.settings.DevToolsSettings",
+                    "message": "Included patterns for restart : [/mybatis-plus-[\w-]+.jar]" }
+                    
+{
+                    "app": "Crmeb",
+                    "timestamp":"2020-10-19 10:51:50.593",
+                    "level": "DEBUG",
+                    "thread": "restartedMain",
+                    "class": "o.s.b.devtools.settings.DevToolsSettings",
+                    "message": "Excluded patterns for restart : [/spring-boot-actuator/target/classes/, /spring-boot-devtools/target/classes/, /spring-boot/target/classes/, /spring-boot-starter-[\w-]+/, /spring-boot-autoconfigure/target/classes/, /spring-boot-starter/target/classes/]" }
+                    
+{
+                    "app": "Crmeb",
+                    "timestamp":"2020-10-19 10:51:50.594",
+                    "level": "DEBUG",
+                    "thread": "restartedMain",
+                    "class": "o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext",
+                    "message": "Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@9f185f1" }
+                    
+{
+                    "app": "Crmeb",
+                    "timestamp":"2020-10-19 10:51:53.481",
+                    "level": "DEBUG",
+                    "thread": "restartedMain",
+                    "class": "o.s.b.w.e.t.TomcatServletWebServerFactory",
+                    "message": "Code archive: D:\maven\repository\org\springframework\boot\spring-boot\2.2.6.RELEASE\spring-boot-2.2.6.RELEASE.jar" }
+                    
+{
+                    "app": "Crmeb",
+                    "timestamp":"2020-10-19 10:51:53.482",
+                    "level": "DEBUG",
+                    "thread": "restartedMain",
+                    "class": "o.s.b.w.e.t.TomcatServletWebServerFactory",
+                    "message": "Code archive: D:\maven\repository\org\springframework\boot\spring-boot\2.2.6.RELEASE\spring-boot-2.2.6.RELEASE.jar" }
+                    
+{
+                    "app": "Crmeb",
+                    "timestamp":"2020-10-19 10:51:53.483",
+                    "level": "DEBUG",
+                    "thread": "restartedMain",
+                    "class": "o.s.b.w.e.t.TomcatServletWebServerFactory",
+                    "message": "Document root: C:\Users\Administrator\Desktop\hxsp\src\main\webapp" }
+                    
+{
+                    "app": "Crmeb",
+                    "timestamp":"2020-10-19 10:51:54.287",
+                    "level": "DEBUG",
+                    "thread": "restartedMain",
+                    "class": "o.s.web.context.ContextLoader",
+                    "message": "Published root WebApplicationContext as ServletContext attribute with name [org.springframework.web.context.WebApplicationContext.ROOT]" }
+                    
+{
+                    "app": "Crmeb",
+                    "timestamp":"2020-10-19 10:51:55.017",
+                    "level": "DEBUG",
+                    "thread": "restartedMain",
+                    "class": "o.s.b.w.s.ServletContextInitializerBeans",
+                    "message": "Mapping filters: filterRegistrationBean urls=[/*] order=-2147483647, filterRegistrationBean urls=[/*] order=2147483647, characterEncodingFilter urls=[/*] order=-2147483648, formContentFilter urls=[/*] order=-9900, requestContextFilter urls=[/*] order=-105" }
+                    
+{
+                    "app": "Crmeb",
+                    "timestamp":"2020-10-19 10:51:55.018",
+                    "level": "DEBUG",
+                    "thread": "restartedMain",
+                    "class": "o.s.b.w.s.ServletContextInitializerBeans",
+                    "message": "Mapping servlets: statViewServlet urls=[/druid/*], dispatcherServlet urls=[/]" }
+                    
+{
+                    "app": "Crmeb",
+                    "timestamp":"2020-10-19 10:51:55.073",
+                    "level": "DEBUG",
+                    "thread": "restartedMain",
+                    "class": "o.s.b.a.m.w.servlet.WebMvcMetricsFilter",
+                    "message": "Filter 'webMvcMetricsFilter' configured for use" }
+                    
+{
+                    "app": "Crmeb",
+                    "timestamp":"2020-10-19 10:51:55.073",
+                    "level": "DEBUG",
+                    "thread": "restartedMain",
+                    "class": "o.s.b.w.s.f.OrderedRequestContextFilter",
+                    "message": "Filter 'requestContextFilter' configured for use" }
+                    
+{
+                    "app": "Crmeb",
+                    "timestamp":"2020-10-19 10:51:55.074",
+                    "level": "DEBUG",
+                    "thread": "restartedMain",
+                    "class": "o.s.b.w.s.f.OrderedCharacterEncodingFilter",
+                    "message": "Filter 'characterEncodingFilter' configured for use" }
+                    
+{
+                    "app": "Crmeb",
+                    "timestamp":"2020-10-19 10:51:55.074",
+                    "level": "DEBUG",
+                    "thread": "restartedMain",
+                    "class": "o.s.b.w.s.f.OrderedFormContentFilter",
+                    "message": "Filter 'formContentFilter' configured for use" }
+                    
+{
+                    "app": "Crmeb",
+                    "timestamp":"2020-10-19 10:51:55.354",
+                    "level": "DEBUG",
+                    "thread": "restartedMain",
+                    "class": "o.s.w.s.m.m.a.RequestMappingHandlerAdapter",
+                    "message": "ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice" }
+                    
+{
+                    "app": "Crmeb",
+                    "timestamp":"2020-10-19 10:51:55.456",
+                    "level": "DEBUG",
+                    "thread": "restartedMain",
+                    "class": "o.s.w.s.m.m.a.RequestMappingHandlerMapping",
+                    "message": "3 mappings in 'requestMappingHandlerMapping'" }
+                    
+{
+                    "app": "Crmeb",
+                    "timestamp":"2020-10-19 10:51:55.503",
+                    "level": "DEBUG",
+                    "thread": "restartedMain",
+                    "class": "o.s.w.s.handler.SimpleUrlHandlerMapping",
+                    "message": "Patterns [/webjars/**, /**] in 'resourceHandlerMapping'" }
+                    
+{
+                    "app": "Crmeb",
+                    "timestamp":"2020-10-19 10:51:55.518",
+                    "level": "DEBUG",
+                    "thread": "restartedMain",
+                    "class": "o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver",
+                    "message": "ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice" }
+                    
+{
+                    "app": "Crmeb",
+                    "timestamp":"2020-10-19 10:51:56.702",
+                    "level": "DEBUG",
+                    "thread": "restartedMain",
+                    "class": "o.s.b.d.livereload.LiveReloadServer",
+                    "message": "Starting live reload server on port 35729" }
+                    
+{
+                    "app": "Crmeb",
+                    "timestamp":"2020-10-19 10:51:56.862",
+                    "level": "DEBUG",
+                    "thread": "restartedMain",
+                    "class": "o.s.boot.devtools.restart.Restarter",
+                    "message": "Creating new Restarter for thread Thread[main,5,main]" }
+                    
+{
+                    "app": "Crmeb",
+                    "timestamp":"2020-10-19 10:51:56.862",
+                    "level": "DEBUG",
+                    "thread": "restartedMain",
+                    "class": "o.s.boot.devtools.restart.Restarter",
+                    "message": "Immediately restarting application" }
+                    
+{
+                    "app": "Crmeb",
+                    "timestamp":"2020-10-19 10:51:56.862",
+                    "level": "DEBUG",
+                    "thread": "restartedMain",
+                    "class": "o.s.boot.devtools.restart.Restarter",
+                    "message": "Created RestartClassLoader org.springframework.boot.devtools.restart.classloader.RestartClassLoader@7a93f1bc" }
+                    
+{
+                    "app": "Crmeb",
+                    "timestamp":"2020-10-19 10:51:56.863",
+                    "level": "DEBUG",
+                    "thread": "restartedMain",
+                    "class": "o.s.boot.devtools.restart.Restarter",
+                    "message": "Starting application com.example.hxsp.HxspApplication with URLs [file:/C:/Users/Administrator/Desktop/hxsp/target/classes/]" }
+                    
+{
+                    "app": "Crmeb",
+                    "timestamp":"2020-10-19 10:52:33.407",
+                    "level": "DEBUG",
+                    "thread": "File Watcher",
+                    "class": "o.s.boot.devtools.restart.Restarter",
+                    "message": "Restarting application" }
+                    
+{
+                    "app": "Crmeb",
+                    "timestamp":"2020-10-19 10:52:33.408",
+                    "level": "DEBUG",
+                    "thread": "Thread-6",
+                    "class": "o.s.boot.devtools.restart.Restarter",
+                    "message": "Stopping application" }
+                    
+{
+                    "app": "Crmeb",
+                    "timestamp":"2020-10-19 10:52:33.409",
+                    "level": "DEBUG",
+                    "thread": "Thread-6",
+                    "class": "o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext",
+                    "message": "Closing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@9f185f1, started on Mon Oct 19 10:51:50 CST 2020" }
+                    
+{
+                    "app": "Crmeb",
+                    "timestamp":"2020-10-19 10:52:33.826",
+                    "level": "DEBUG",
+                    "thread": "Thread-6",
+                    "class": "o.s.boot.devtools.restart.Restarter",
+                    "message": "Created RestartClassLoader org.springframework.boot.devtools.restart.classloader.RestartClassLoader@404868e4" }
+                    
+{
+                    "app": "Crmeb",
+                    "timestamp":"2020-10-19 10:52:33.827",
+                    "level": "DEBUG",
+                    "thread": "Thread-6",
+                    "class": "o.s.boot.devtools.restart.Restarter",
+                    "message": "Starting application com.example.hxsp.HxspApplication with URLs [file:/C:/Users/Administrator/Desktop/hxsp/target/classes/]" }
+                    

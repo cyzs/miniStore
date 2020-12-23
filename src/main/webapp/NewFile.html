@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+
+    <title>Test.html</title>
+
+    <meta name="keywords" content="keyword1,keyword2,keyword3">
+
+    <meta name="description" content="this is my page">
+
+    <meta http-equiv="Content-Type" content="text/html; charset=GB2312">   
+
+    <script type="text/javascript" src="../id/js/jquery-1.7.2.js"></script> 
+
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+
+  </head>
+
+  <body>
+
+  <div class="aaa">
+
+    上传图片<input type="file" id="file" onchange="change()" accept="image/*"/> 
+
+    <img id="img" src="" style="width:60px;height:60px;"/>
+
+    </div>
+
+    <script> 
+
+      function change(){
+
+      var filePath = $("#file").val();
+
+      alert("filePath "+filePath);      
+
+      var imgObj =$("#file")[0].files[0];
+
+      alert("imgObj "+imgObj);          
+
+      //将formData传给后台
+
+          var formData=new FormData();
+
+          formData.append("file",imgObj);
+
+          alert("formData"+formData);
+
+              //ajax请求后台,将请求的数据调用fileUp接口并且填写上传的服务器地址savePath
+
+              $.ajax({
+
+                    url: "http://192.168.1.107:8080/SellingTea/fileUp?savePath=uploadFiles/headPortrait",
+
+                    type: "POST",
+
+                    data: formData,
+
+                    dataType:"json",
+
+                    /**
+
+                    *必须false才会自动加上正确的Content-Type
+
+                    */
+
+                    contentType: false,
+
+                    /**
+
+                    * 必须false才会避开jQuery对 formdata 的默认处理
+
+                    * XMLHttpRequest会对 formdata 进行正确的处理
+
+                    */
+
+                    processData: false,
+
+                    success: function (data) {
+
+                      if(data){
+
+                        alert("上传成功！");
+
+                        console.log("data "+JSON.stringify(data));
+
+                        $("#img").attr("src",data.path);                 
+
+                      }                     
+
+                    },
+
+                    error: function () {
+
+                      alert("上传失败！");                   
+
+                  }
+
+              });   
+
+      }         
+
+  </script>
+
+  </body>
+
+</html>
+

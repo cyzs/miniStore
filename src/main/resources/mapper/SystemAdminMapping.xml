@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.hxsp.dao.SystemAdminDao">
+    <resultMap id="result" type="com.example.hxsp.bean.SystemAdmin">
+        <id column="id" property="id"/>
+        <result column="account" property="account"/>
+        <result column="pwd" property="pwd"/>
+        <result column="real_name" property="realName"/>
+        <result column="roles" property="roles"/>
+        <result column="last_ip" property="last_ip"/>
+        <result column="login_count" property="loginCount"/>
+        <result column="level" property="level"/>
+        <result column="status" property="status"/>
+        <result column="is_del" property="is_del"/>
+        <result column="create_time" property="createTime"/>
+        <result column="update_time" property="updateTime"/>
+    </resultMap>
+
+<!--    查询所有-->
+    <select id="selAll" resultType="com.example.hxsp.bean.SystemAdmin" resultMap="result">
+        select * from system_admin
+    </select>
+
+ 
+</mapper>

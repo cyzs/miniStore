@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.hxsp.dao.CouponUserDao">
+    <resultMap id="result" type="com.example.hxsp.bean.CouponUser">
+        <id column="id" property="id"/>
+        <result column="coupon_id" property="couponId"/>
+        <result column="cid" property="cid"/>
+        <result column="uid" property="uid"/>
+        <result column="name" property="name"/>
+        <result column="money" property="money"/>
+        <result column="min_price" property="minPrice"/>
+        <result column="type" property="type"/>
+        <result column="status" property="status"/>
+        <result column="start_time" property="startTime"/>
+        <result column="end_time" property="endTime"/>
+        <result column="use_time" property="useTime"/>
+        <result column="use_type" property="useType"/>
+        <result column="primary_key" property="primaryKey"/>
+        <result column="create_time" property="createTime"/>
+        <result column="update_time" property="updateTime"/>
+    </resultMap>
+
+<!--    查询所有-->
+    <select id="selAll" resultType="com.example.hxsp.bean.CouponUser" resultMap="result">
+        select * from coupon_user
+    </select>
+<!--    查询我的-->
+    <select id="findMyList" resultType="com.example.hxsp.bean.CouponUser" resultMap="result">
+        select * from coupon_user where uid=#{uid} 
+         <if test="status != null ">
+           and status=#{status}
+        </if>
+        
+       
+    </select>
+    
+    <!--    查询我的-->
+    <select id="findMyListNum" resultType="java.lang.Long">
+        select count(*) from coupon_user where uid=#{uid} 
+         <if test="status != null ">
+           and status=#{status}
+        </if>
+
+
+    </select>
+
+ <!--    查询-->
+    <select id="findByUidAndId" resultType="com.example.hxsp.bean.CouponUser" resultMap="result">
+        select * from coupon_user where uid=#{uid} and coupon_id=#{id}
+    </select>
+    
+    <insert id="save" parameterType="com.example.hxsp.bean.CouponUser" useGeneratedKeys="true" keyProperty="id">
+    	insert into coupon_user(coupon_id, uid, name, money, min_price, start_time, end_time, use_type)values(#{couponId},#{uid},#{name},#{money}, #{minPrice}, #{startTime}, #{endTime}, #{useType});
+    </insert>
+    
+    
+      <update id="updateStatus" parameterType="com.example.hxsp.bean.CouponUser">
+        update coupon_user set 
+        status=#{status} where coupon_id=#{couponId} and status=#{ostatus}
+    </update>
+
+<!--    判断用户是否已领取该优惠券-->
+    <select id="alreadyReceived" resultType="long">
+        select count(*) from coupon_user where uid=#{uid} and id=#{id}
+    </select>
+
+</mapper>

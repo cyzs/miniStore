@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.hxsp.dao.CartProductInfoDao">
+    <resultMap id="result" type="com.example.hxsp.bean.CartProductInfo">
+        <id column="id" property="id"/>
+           <result column="cart_id" property="cartId"/>
+        <result column="uid" property="uid"/>
+        <result column="type" property="type"/>
+        <result column="product_id" property="productId"/>
+        <result column="product_attr_unique" property="productAttrUnique"/>
+        <result column="cart_num" property="cartNum"/>
+        <result column="combination_id" property="combinationId"/>
+        <result column="seckill_id" property="seckillId"/>
+        <result column="bargain_id" property="bargainId"/>
+        <result column="status" property="status"/>
+        <result column="create_time" property="createTime"/>
+        <result column="update_time" property="updateTime"/>
+    </resultMap>
+
+<!--    查询所有-->
+    <select id="selAll" resultType="com.example.hxsp.bean.CartProductInfo" resultMap="result">
+        select * from cart_product_info WHERE uid=#{uid}
+    </select>
+    <!--添加购物车商品关系-->
+    <insert id="add" parameterType="com.example.hxsp.bean.CartProductInfo">
+        insert into cart_product_info(cart_id,uid,type,product_id,product_attr_unique,cart_num,combination_id,seckill_id,bargain_id,status)
+         values (#{cartId},#{uid},#{type},#{productId},#{productAttrUnique},#{cartNum},#{combinationId},#{seckillId},#{bargainId},#{status});
+    </insert>
+
+<!--    删除购物车商品-->
+    <delete id="delete" parameterType="Integer">
+        delete from cart_product_info where id=#{id}
+    </delete>
+
+
+</mapper>

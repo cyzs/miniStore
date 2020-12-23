@@ -1,0 +1,176 @@
+{
+                    "app": "Crmeb",
+                    "timestamp":"2020-10-19 10:51:50.511",
+                    "level": "INFO",
+                    "thread": "restartedMain",
+                    "class": "com.example.hxsp.HxspApplication",
+                    "message": "Starting HxspApplication on OS-20200523XKKD with PID 12212 (C:\Users\Administrator\Desktop\hxsp\target\classes started by Administrator in C:\Users\Administrator\Desktop\hxsp)" }
+                    
+{
+                    "app": "Crmeb",
+                    "timestamp":"2020-10-19 10:51:50.513",
+                    "level": "INFO",
+                    "thread": "restartedMain",
+                    "class": "com.example.hxsp.HxspApplication",
+                    "message": "No active profile set, falling back to default profiles: default" }
+                    
+{
+                    "app": "Crmeb",
+                    "timestamp":"2020-10-19 10:51:50.593",
+                    "level": "INFO",
+                    "thread": "restartedMain",
+                    "class": "o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor",
+                    "message": "Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable" }
+                    
+{
+                    "app": "Crmeb",
+                    "timestamp":"2020-10-19 10:51:50.594",
+                    "level": "INFO",
+                    "thread": "restartedMain",
+                    "class": "o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor",
+                    "message": "For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'" }
+                    
+{
+                    "app": "Crmeb",
+                    "timestamp":"2020-10-19 10:51:52.024",
+                    "level": "INFO",
+                    "thread": "restartedMain",
+                    "class": "o.s.d.r.c.RepositoryConfigurationDelegate",
+                    "message": "Multiple Spring Data modules found, entering strict repository configuration mode!" }
+                    
+{
+                    "app": "Crmeb",
+                    "timestamp":"2020-10-19 10:51:52.028",
+                    "level": "INFO",
+                    "thread": "restartedMain",
+                    "class": "o.s.d.r.c.RepositoryConfigurationDelegate",
+                    "message": "Bootstrapping Spring Data Redis repositories in DEFAULT mode." }
+                    
+{
+                    "app": "Crmeb",
+                    "timestamp":"2020-10-19 10:51:52.068",
+                    "level": "INFO",
+                    "thread": "restartedMain",
+                    "class": "o.s.d.r.c.RepositoryConfigurationDelegate",
+                    "message": "Finished Spring Data repository scanning in 20ms. Found 0 Redis repository interfaces." }
+                    
+{
+                    "app": "Crmeb",
+                    "timestamp":"2020-10-19 10:51:53.804",
+                    "level": "INFO",
+                    "thread": "restartedMain",
+                    "class": "o.s.b.w.embedded.tomcat.TomcatWebServer",
+                    "message": "Tomcat initialized with port(s): 8080 (http)" }
+                    
+{
+                    "app": "Crmeb",
+                    "timestamp":"2020-10-19 10:51:53.821",
+                    "level": "INFO",
+                    "thread": "restartedMain",
+                    "class": "o.apache.coyote.http11.Http11NioProtocol",
+                    "message": "Initializing ProtocolHandler ["http-nio-8080"]" }
+                    
+{
+                    "app": "Crmeb",
+                    "timestamp":"2020-10-19 10:51:53.821",
+                    "level": "INFO",
+                    "thread": "restartedMain",
+                    "class": "org.apache.catalina.core.StandardService",
+                    "message": "Starting service [Tomcat]" }
+                    
+{
+                    "app": "Crmeb",
+                    "timestamp":"2020-10-19 10:51:53.822",
+                    "level": "INFO",
+                    "thread": "restartedMain",
+                    "class": "org.apache.catalina.core.StandardEngine",
+                    "message": "Starting Servlet engine: [Apache Tomcat/9.0.33]" }
+                    
+{
+                    "app": "Crmeb",
+                    "timestamp":"2020-10-19 10:51:54.280",
+                    "level": "INFO",
+                    "thread": "restartedMain",
+                    "class": "org.apache.jasper.servlet.TldScanner",
+                    "message": "At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time." }
+                    
+{
+                    "app": "Crmeb",
+                    "timestamp":"2020-10-19 10:51:54.287",
+                    "level": "INFO",
+                    "thread": "restartedMain",
+                    "class": "o.a.c.c.C.[Tomcat].[localhost].[/]",
+                    "message": "Initializing Spring embedded WebApplicationContext" }
+                    
+{
+                    "app": "Crmeb",
+                    "timestamp":"2020-10-19 10:51:54.287",
+                    "level": "INFO",
+                    "thread": "restartedMain",
+                    "class": "o.s.web.context.ContextLoader",
+                    "message": "Root WebApplicationContext: initialization completed in 3693 ms" }
+                    
+{
+                    "app": "Crmeb",
+                    "timestamp":"2020-10-19 10:51:55.341",
+                    "level": "INFO",
+                    "thread": "restartedMain",
+                    "class": "o.s.s.concurrent.ThreadPoolTaskExecutor",
+                    "message": "Initializing ExecutorService 'applicationTaskExecutor'" }
+                    
+{
+                    "app": "Crmeb",
+                    "timestamp":"2020-10-19 10:51:56.709",
+                    "level": "INFO",
+                    "thread": "restartedMain",
+                    "class": "o.s.b.d.a.OptionalLiveReloadServer",
+                    "message": "LiveReload server is running on port 35729" }
+                    
+{
+                    "app": "Crmeb",
+                    "timestamp":"2020-10-19 10:51:56.717",
+                    "level": "INFO",
+                    "thread": "restartedMain",
+                    "class": "o.s.b.a.e.web.EndpointLinksResolver",
+                    "message": "Exposing 2 endpoint(s) beneath base path '/actuator'" }
+                    
+{
+                    "app": "Crmeb",
+                    "timestamp":"2020-10-19 10:51:56.769",
+                    "level": "INFO",
+                    "thread": "restartedMain",
+                    "class": "o.apache.coyote.http11.Http11NioProtocol",
+                    "message": "Starting ProtocolHandler ["http-nio-8080"]" }
+                    
+{
+                    "app": "Crmeb",
+                    "timestamp":"2020-10-19 10:51:56.817",
+                    "level": "INFO",
+                    "thread": "restartedMain",
+                    "class": "o.s.b.w.embedded.tomcat.TomcatWebServer",
+                    "message": "Tomcat started on port(s): 8080 (http) with context path ''" }
+                    
+{
+                    "app": "Crmeb",
+                    "timestamp":"2020-10-19 10:51:56.820",
+                    "level": "INFO",
+                    "thread": "restartedMain",
+                    "class": "com.example.hxsp.HxspApplication",
+                    "message": "Started HxspApplication in 7.155 seconds (JVM running for 7.957)" }
+                    
+{
+                    "app": "Crmeb",
+                    "timestamp":"2020-10-19 10:52:33.412",
+                    "level": "INFO",
+                    "thread": "Thread-6",
+                    "class": "o.s.s.concurrent.ThreadPoolTaskExecutor",
+                    "message": "Shutting down ExecutorService 'applicationTaskExecutor'" }
+                    
+{
+                    "app": "Crmeb",
+                    "timestamp":"2020-10-19 10:52:33.435",
+                    "level": "INFO",
+                    "thread": "Thread-6",
+                    "class": "com.alibaba.druid.pool.DruidDataSource",
+                    "message": "{dataSource-0} closing ..." }
+                    

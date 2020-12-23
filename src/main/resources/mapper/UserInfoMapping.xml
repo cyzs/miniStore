@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.hxsp.dao.UserInfoDao">
+
+    <resultMap id="result" type="com.example.hxsp.bean.UserInfo">
+        <id column="uid" property="uid"/>
+        <result column="account" property="account"/>
+        <result column="pwd" property="pwd"/>
+        <result column="real_name" property="realName"/>
+        <result column="birthday" property="birthday"/>
+        <result column="mark" property="mark"/>
+        <result column="partner_id" property="partnerId"/>
+        <result column="group_id" property="groupId"/>
+        <result column="tag_name" property="tagName"/>
+        <result column="nick_name" property="nickName"/>
+        <result column="avatar" property="avatar"/>
+        <result column="phone" property="phone"/>
+        <result column="openid" property="openid"/>
+        <result column="last_ip" property="lastIp"/>
+        <result column="now_money" property="nowMoney"/>
+        <result column="integral" property="integral"/>
+        <result column="experience" property="experience"/>
+        <result column="sign_num" property="signNum"/>
+        <result column="status" property="status"/>
+        <result column="level" property="level"/>
+        <result column="user_type" property="userType"/>
+        <result column="pay_count" property="payCount"/>
+        <result column="addres" property="address"/>
+        <result column="login_type" property="loginType"/>
+        <result column="create_time" property="createTime"/>
+        <result column="update_time" property="updateTime"/>
+        <result column="last_login_time" property="lastLoginTime"/>
+        <result column="clean_time" property="cleanTime"/>
+        <result column="subscribe" property="subscribe"/>
+        <result column="subscribe_time" property="subscribeTime"/>
+        <result column="sex" property="sex"/>
+        <result column="country" property="country"/>
+    </resultMap>
+
+<!--    查询所有用户-->
+    <select id="findAll" resultType="com.example.hxsp.bean.UserInfo" resultMap="result">
+        select * from user_info
+    </select>
+    
+      <select id="count"  resultType="java.lang.Long">
+        select count(*) from user_info 
+         <where>
+            1=1
+            <if test="openid!=null and openid!=''"> and openid=#{openid}</if>
+            <if test="nickname!=null and nickname!=''"> and locate(#{nickname},nickname) >0</if>
+        </where>
+        
+    </select>
+   <select id="selUserByOpenId"  resultType="com.example.hxsp.bean.UserInfo" resultMap="result">
+         select * from user_info where openid=#{openid}
+    </select>
+ <!-- 新增 -->
+    <insert id="addUser" parameterType="com.example.hxsp.bean.UserInfo" useGeneratedKeys="true" keyProperty="uid">
+    	insert into user_info (openid, nickname)values(#{openid},#{nickname})
+    	
+</insert>
+  <insert id="addAdmin" parameterType="com.example.hxsp.bean.UserInfo" useGeneratedKeys="true" keyProperty="uid">
+    	insert into user_info (account, pwd, user_type)values(#{account},#{pwd},#{userType})
+    	
+</insert>
+  <select id="queryAll" resultType="com.example.hxsp.bean.UserInfo" resultMap="result">
+        select * from user_info where account=#{account} and pwd=#{pwd}
+    </select>
+    
+    <select id="queryById" resultType="com.example.hxsp.bean.UserInfo" resultMap="result">
+        select * from user_info where uid=#{uid}
+    </select>
+     <select id="selUserByAccount" resultType="com.example.hxsp.bean.UserInfo" resultMap="result">
+        select * from user_info where account=#{account}
+    </select>
+ 
+  <select id="select" resultType="com.example.hxsp.bean.UserInfo" resultMap="result">
+        select  *  from  user_info
+        <where>
+            1=1
+            and user_type=1
+            <if test="name!=null and name!=''"> and locate(#{name},nickname) >0</if>
+        </where>
+        order by update_time desc
+        limit #{pageNo},#{pageSize}
+    </select>
+ 
+ 
+    <update id="delete" parameterType="com.example.hxsp.bean.UserInfo">
+        delete from user_info  where uid=#{uid}
+    </update>
+      <update id="updatePass" parameterType="com.example.hxsp.bean.UserInfo">
+        uodate user_info  set pwd=#{npwd} where account=#{account} and pwd=#{pwd}
+    </update>
+
+<!--    修改积分-->
+    <update id="modifyIntegral" parameterType="com.example.hxsp.bean.UserInfo">
+        update user_info set integral=integral + #{gainIntegral}  where uid=#{uid}
+    </update>
+
+<!--    根据uid查询用户信息-->
+    <select id="selUserInfoByUid" resultMap="result">
+        select * from user_info where uid=#{uid}
+    </select>
+
+</mapper>
